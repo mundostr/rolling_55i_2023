@@ -1,0 +1,71 @@
+body {
+    /*
+    color RGB (red, green, blue)
+    cada color va de 00 a FF.
+    da igual mayúsculas o minúsculas
+    */
+    color: white;
+    background-color: #333333;
+    font-family: Arial;
+}
+
+header {
+    height: 40px;
+    background-color: #222222;
+    padding: 16px;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+nav,
+footer
+{
+    height: 16px;
+    padding: 8px;
+    background-color: #990000;
+}
+
+main {
+    padding: 8px;
+}
+
+article {
+    background-color: #222222;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+
+.frm_login {
+    border: 1px solid #ffffff;
+    padding: 8px;
+}
+
+.campo_login {
+    background-color: #dddddd;
+    padding: 8px;
+    border: 0;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.campo_recordarme {
+    width: 20px;
+    height: 20px;
+    border: 0;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-bottom: 8px;
+}
+
+.btn_login {
+    color: #ffffff;
+    background-color: #666666;
+    padding: 8px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.btn_login:hover {
+    cursor: pointer;
+    background-color: #555555;
+}

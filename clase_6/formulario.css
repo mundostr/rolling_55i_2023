@@ -6,7 +6,7 @@ html {
 
 header {
     background: #111111;
-    font-size: 3em;
+    font-size: 2em; /* 2 veces el tamaño predefinido en el navegador */
     padding: 16px;
 }
 

@@ -8,9 +8,9 @@ body {
 header {
     padding: 16px;
     margin: 0;
-    height: 25vh;
+    /* height: 25vh;
     background-image: url('https://www.silverstone.co.uk/sites/default/files/styles/article_crop/public/images/F1%20Show%20Cars%20Header%202000x817.jpg');
-    background-size: 100% auto;
+    background-size: 100% auto; */
 }
 
 header img {
@@ -29,13 +29,21 @@ nav {
 }
 
 main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 32px;
 }
 
 article {
+    position: relative;
     padding: 16px;
+    width: 330px;
+    margin: 8px;
     margin-bottom: 32px;
     border: 1px solid white;
+    border-radius: 8px;
 }
 
 h1 {
@@ -46,7 +54,8 @@ h1 {
 
 .btn {
     position: absolute;
-    right: 16px;
+    right: -8px;
+    bottom: -8px;
     color: black;
     background-color: orange;
     padding: 8px;

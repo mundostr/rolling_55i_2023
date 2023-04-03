@@ -1,0 +1,46 @@
+body {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    background-color: grey;
+    margin: 0;
+    font-family: Arial;
+}
+
+header {
+    display: flex;
+    align-items: center; /* alineación vertical */
+    justify-content: center; /* alineación horizontal */
+    background-color: orange;
+    height: 20vh;
+    font-size: 2em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background-color: #ff6600;
+    height: 5vh;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 65vh;
+}
+
+aside {
+    width: 20vw;
+    background-color: bisque;
+}
+
+section {
+    padding: 1vh;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    background-color: #ff6600;
+    height: 10vh;
+}

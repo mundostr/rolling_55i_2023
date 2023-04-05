@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta con imagen</title>
+    <link rel="stylesheet" href="./tarjeta_imagen.css">
+</head>
+<body>
+    <section>
+        <article>
+            <div>
+                <img class="foto_articulo" src="./foto.webp" alt="Foto" title="Foto">
+                <h1>Título general de la primer noticia</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus necessitatibus ipsum, nemo nam iste quae provident eos totam accusamus ducimus ipsa nihil nostrum et, error corporis repudiandae praesentium maxime consectetur!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus necessitatibus ipsum, nemo nam iste quae provident eos totam accusamus ducimus ipsa nihil nostrum et, error corporis repudiandae praesentium maxime consectetur!</p>
+            </div>
+
+            <div style="text-align: right;">
+                <a href="#">Más >></a>
+            </div>
+        </article>
+
+        <article>
+            <div>
+                <!--
+                    El tag img permite una sintaxis alternativa para indicar distintas fuentes
+                    de imagen, pero es más cómodo el uso del tag semántico picture en
+                    combinación con media queries
+                -->
+                <picture>
+                    <source media="(max-width: 640px)" srcset="foto_low_res.jpg" />
+                    <source media="(max-width: 1200px)" srcset="foto_medium_res.jpg" />
+                    <img class="foto_articulo" src="foto_high_res.jpg" alt="Foto" title="Foto" />
+                </picture>
+                
+                <h1>Título general de la segunda noticia</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus necessitatibus ipsum, nemo nam iste quae provident eos totam accusamus ducimus ipsa nihil nostrum et, error corporis repudiandae praesentium maxime consectetur!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus necessitatibus ipsum, nemo nam iste quae provident eos totam accusamus ducimus ipsa nihil nostrum et, error corporis repudiandae praesentium maxime consectetur!</p>
+            </div>
+
+            <div style="text-align: right;">
+                <a href="#">Más >></a>
+            </div>
+        </article>
+    </section>
+</body>
+</html>

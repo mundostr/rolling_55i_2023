@@ -1,6 +1,6 @@
 body {
-    display: flex;
-    flex-direction: column;
+    display: flex; /* Podemos utilizar tranquilamente flexbox en el propio body */
+    flex-direction: column; /* Cambiamos a column para que las cajas fluyan en vertical */
     color: black;
     background-color: grey;
     margin: 0;
@@ -12,26 +12,24 @@ header {
     align-items: center; /* alineación vertical */
     justify-content: center; /* alineación horizontal */
     background-color: orange;
-    height: 20vh;
-    font-size: 2em;
+    height: 20vh; /* Recordar vh = viewport height, % relativo a la altura del viewport */
+    font-size: 2em; /* Recordar em = x veces el tamaño actual de fuente predeterminado */
 }
 
 nav {
-    display: flex;
-    align-items: center;
-    background-color: #ff6600;
-    height: 5vh;
+    display: none; /* De forma predeterminada ocultamos el nav */
 }
 
 main {
     display: flex;
-    flex-direction: row;
-    height: 65vh;
+    flex-direction: row; /* Solo ilustrativo, es el valor por defecto, no haría falta especificarlo */
+    height: 70vh;
 }
 
 aside {
-    width: 20vw;
+    width: 20vw; /* Recordar vw = viewport width, % relativo al ancho del viewport */
     background-color: bisque;
+    padding: 1vh;
 }
 
 section {
@@ -43,4 +41,28 @@ footer {
     align-items: center;
     background-color: #ff6600;
     height: 10vh;
+}
+
+/*
+Los media queries nos permiten especificar una condición.
+SOLO SI SE CUMPLE la condición, se aplican los estilos listados dentro del bloque.
+En este caso se vuelve a hacer visible el nav, se oculta el aside y se modifica
+la altura del main cuando el ancho del viewport es menor o igual a 640 píxeles.
+*/
+@media screen and (max-width: 640px) {
+    nav {
+        display: flex;
+        align-items: center;
+        color: #ffffff;
+        background-color: #333333;
+        height: 5vh;
+    }
+    
+    aside {
+        display: none;
+    }
+
+    main {
+        height: 65vh;
+    }
 }

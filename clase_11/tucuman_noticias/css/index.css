@@ -1,0 +1,9 @@
+.cabecera {
+    height: 25vh;
+    background-image: url('https://proyungas.org.ar/wp-content/uploads/2020/03/florida_fiona-e1584724585836.jpg');
+    background-size: 100% 100%;
+    font-size: 3em;
+    color: #e1e1e1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}

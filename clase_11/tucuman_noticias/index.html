@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Primer prueba Bootstrap</title>
+    <!--
+        Para comenzar a utilizar Bootstrap en nuestro proyecto, necesitamos insertar un archivo CSS y un Javascript.
+        Lo hacemos desde un enlace de CDN externo, también podríamos descargarlo y usarlo localmente.
+        integrity guarda un hash que le permite al navegador verificar la autenticidad del archivo que descarga,
+        es una práctica muy común cuando se utilizan contenidos de una CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"> -->
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <!--
+        La clase container o container-fluid nos permite definir un contenedor principal,
+        es equivalente a habilitar el uso de flexbox si lo hacemos con CSS plano.
+    -->
+    <main class="container-fluid">
+        <!-- la clase row orienta el flujo sobre el eje principal, (flex-direction en CSS plano) -->
+        <!-- Cabecera -->
+        <div class="row" id="cab01">
+            <div class="col d-flex align-items-end cabecera">Tucumán Natural</div>
+        </div>
+
+        <!-- Menu superior -->
+        <div class="row">
+            <div class="col bg-dark">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="#">Portada</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Ofertas</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Recomendados</a>
+                                </li>
+                            </ul>
+                            
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Criterio" aria-label="Criterio">
+                                <button class="btn btn-outline-success" type="submit">Buscar</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Noticias -->
+        <div class="row"> <!-- Fila al 100% de ancho -->
+            <!--
+                Las clases col nos permiten manejar los breackpoints, utilizando el sistema de 12 columnas.
+                En este caso el Menu ocupará un 25% del viewport (col-3) y el contenido un 75% (col-9).
+                3 + 9 = 12
+
+                d-none: (display), oculta el elemento.
+                d-md-block, muestra el elemento a partir del breackpoint md hacia arriba.
+            -->
+            <div class="col-md-9 col-xs-12 p-4 mt-2">
+                <div class="row">
+                    <div class="col">
+                        <div id="carouselExampleControls" class="carousel slide mb-4" data-bs-ride="carousel">
+                            <div class="carousel-inner" style="border-radius: 6px;">
+                                <div class="carousel-item active">
+                                    <img src="https://www.serargentino.com/public/images/2020/12/la%20florida%202-1608804187.jpg" class="d-block w-100" alt="Foto">
+
+                                    <div class="carousel-caption d-none d-md-block bg-dark opacity-50">
+                                        <h4>Primer imagen</h4>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="https://www.serargentino.com/public/images/2020/12/la%20florida-1608804219.jpg" class="d-block w-100" alt="Foto">
+                                    
+                                    <div class="carousel-caption d-none d-md-block bg-dark opacity-50">
+                                        <h4>Segunda imagen</h4>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="https://www.serargentino.com/public/images/2020/12/taruca-1608804242.jpg" class="d-block w-100" alt="Foto">
+
+                                    <div class="carousel-caption d-none d-md-block bg-dark opacity-50">
+                                        <h4>Tercer imagen</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Prev</span>
+                            </button>
+                            
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                              <span class="visually-hidden">Sig</span>
+                            </button>
+                          </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-7 col-xs-12">
+                        <!-- Noticia 1 -->
+                        <!-- Utilizamos un componente card, muy práctico para el formato de noticias -->
+                        <div class="card mb-4">
+                            <img src="https://www.tucumannoticias.com.ar/wp-content/uploads/2023/04/1D85E288-19FA-416E-B16F-8D0EEB5C0299-1110x475.jpeg" class="card-img-top" alt="Foto">
+                            <div class="card-body">
+                                <h5 class="card-title">Gran impacto económico por Semana Santa</h5>
+                                <p class="card-text">Según el balance que hizo la CAME, a precios reales, el gasto de este año fue un 18% superior a lo que desembolsaron quienes pasearon en la misma fecha del 2022. Y también fue importante el aporte de visitantes de Brasil, Uruguay y Chile.</p>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-end">
+                                <!-- El hipervínculo toma formato de botón gracias a la aplicación de clases de Bootstrap. Target _blank permite abrir el enlace en ventana aparte -->
+                                <a href="https://www.tucumannoticias.com.ar/noticia/gran-impacto-economico-por-semana-santa/" target="_blank" class="btn btn-success">Leer nota original</a>
+                            </div>
+                        </div>
+
+                        <!-- Noticia 2 -->
+                        <div class="card mb-4">
+                            <img src="https://www.tucumannoticias.com.ar/wp-content/uploads/2023/04/D335B853-F5D4-4E3C-96C3-DE0A75452D91.jpeg" class="card-img-top" alt="Foto">
+                            <div class="card-body">
+                                <h5 class="card-title">Tucumán líder en trasplantes de médula ósea</h5>
+                                <p class="card-text">El ministro de Salud Pública, Luis Medina Ruiz, se refirió el primer trasplante de médula ósea que se realizó en el hospital Néstor Kirchner, y que pudo llevarse a cabo gracias a un trabajo articulado entre el Ministerio de Salud de la Nación.</p>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="https://www.tucumannoticias.com.ar/noticia/tucuman-lider-en-trasplantes-de-medula-osea/" target="_blank" class="btn btn-success">Leer nota original</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 col-xs-12">
+                        <!-- Noticia 3 -->
+                        <div class="card mb-4">
+                            <img src="https://www.tucumannoticias.com.ar/wp-content/uploads/2023/04/dengue-2-1010x475.jpg" class="card-img-top" alt="Foto">
+                            <div class="card-body">
+                                <h5 class="card-title">Según Salud, en Tucumán "ya hay más de 13.000 casos" de dengue</h5>
+                                <p class="card-text">El ministro de Salud, Luis Medina Ruiz, sostuvo que es importante la consulta médica cuando haya fiebre y vómitos.</p>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="https://www.tucumannoticias.com.ar/noticia/segun-salud-en-tucuman-ya-hay-mas-de-13-000-casos-de-dengue/" target="_blank" class="btn btn-success">Leer nota original</a>
+                            </div>
+                        </div>
+
+                        <!-- Noticia 4 -->
+                        <div class="card mb-4">
+                            <img src="https://www.tucumannoticias.com.ar/wp-content/uploads/2023/04/14A5B396-657B-464D-AA5F-57B0AA1D3854.jpeg" class="card-img-top" alt="Foto">
+                            <div class="card-body">
+                                <h5 class="card-title">Tafi Viejo informa la ubicación de los Puntos Verdes</h5>
+                                <p class="card-text">A fin de concientizar sobre la importancia del cuidado ambiental y sus beneficios a favor de la salud y la economía sustentable, la separación de residuos urbanos se transformó es una práctica esencial a la hora de proteger nuestro entorno natural.</p>
+                            </div>
+
+                            <div class="card-footer d-flex justify-content-end">
+                                <a href="https://www.tucumannoticias.com.ar/noticia/tafi-viejo-informa-la-ubicacion-de-los-puntos-verdes/" target="_blank" class="btn btn-success">Leer nota original</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!--
+                            Repaso breve de tabla, con su fila de cabecera (thead) y su contenido (tbody)
+                            table-striped permite un fondo intermitente en las filas, y table-responsive
+                            organiza automáticamente los contenidos según el espacio en distintos dispositivos.
+                        -->
+                        <table class="table table-striped table-responsive">
+                            <thead class="fw-bold">
+                                <tr>
+                                    <td>#</td>
+                                    <td>Nombre</td>
+                                    <td>Cantidad</td>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Producto 1</td>
+                                    <td>100</td>
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+                                    <td>Producto 2</td>
+                                    <td>50</td>
+                                </tr>
+
+                                <tr>
+                                    <td>3</td>
+                                    <td>Producto 3</td>
+                                    <td>200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3 text-left d-none d-md-block mt-4 p-3">
+                <p>
+                    <form class="row g-4 needs-validation mb-4 bg-success" novalidate style="border-radius: 6px;">
+                        <div class="col-xs-12">
+                            <label for="validationCustom01" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" id="validationCustom01" value="Usuario" required>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <label for="validationCustom02" class="form-label">Clave</label>
+                            <input type="password" class="form-control" id="validationCustom02" value="Clave" required>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                                <label class="form-check-label" for="invalidCheck">Acepto los términos</label>
+                                <div class="invalid-feedback">
+                                    Debe aceptar los términos antes de confirmar.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-xs-12 mb-4" style="text-align: right;">
+                            <button type="submit" class="btn btn-light">Suscribirme a la revista</button>
+                        </div>
+                    </form>
+                </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at excepturi libero veniam magnam molestias nam maxime dicta sit doloremque. Vel cum repellendus corporis recusandae odit doloribus quia. Fuga, asperiores?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at excepturi libero veniam magnam molestias nam maxime dicta sit doloremque. Vel cum repellendus corporis recusandae odit doloribus quia. Fuga, asperiores?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at excepturi libero veniam magnam molestias nam maxime dicta sit doloremque. Vel cum repellendus corporis recusandae odit doloribus quia. Fuga, asperiores?</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-lg-start bg-success text-white">
+        <div class="container p-4 pb-0">
+            <section>
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Tucumán Media</h6>
+                        <p>Seguimiento y difusión de los recursos naturales de la provincia</p>
+                    </div>
+                
+                    <hr class="w-100 clearfix d-md-none" />
+                
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Menu</h6>
+                        <p><a class="text-white">Portada</a></p>
+                        <p><a class="text-white">Ofertas</a></p>
+                        <p><a class="text-white">Recomendaciones</a></p>
+                    </div>
+                
+                    <hr class="w-100 clearfix d-md-none" />
+                
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Enlaces de Interés</h6>
+                        <p><a class="text-white">Sucripción revista</a></p>
+                        <p><a class="text-white">Colaborar con el canal</a></p>
+                        <p><a class="text-white">Denunciar casos</a></p>
+                    </div>
+                
+                    <hr class="w-100 clearfix d-md-none" />
+                
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                        <h6 class="text-uppercase mb-4 font-weight-bold">Contacto</h6>
+                        <p><i class="fas fa-home mr-3"></i> San Miguel de Tucumán, Tucumán, ARGENTINA</p>
+                        <p><i class="fas fa-envelope mr-3"></i> info@gmail.com</p>
+                        <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+                    </div>
+                </div>
+            </section>
+        
+            <hr class="my-3">
+        
+            <section class="p-3 pt-0">
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-7 col-lg-8 text-center text-md-start">
+                        <div class="p-3">© 2023 Copyright: <a class="text-white" href="https://tucumanmedia.com/">Tucuman.media</a></div>
+                    </div>
+                    
+                    <!--
+                        Los íconos son muy fáciles de manejar hoy mediante una librería y vectorialmente, es decir
+                        con capacidad de ajustarse al tamaño deseado sin perder resolución.
+                        Bootstrap cuenta con su librería oficial https://icons.getbootstrap.com/, pero también pueden
+                        utilizarse otras muy conocidas como Font Awesome o Google Material Icons.
+                    -->
+                    <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+                        <!--
+                            La etiqueta i (<i class="fab fa-facebook-f"></i>) permite insertar íconos (también muy utilizada la etiqueta span).
+                            Como es habitual en Bootstrap y otras herramientas, se selecciona a través de clases (fab fa-facebook-f).
+                        -->
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button" href="#cab01"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button" href="contacto.html"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button" href="https://idux.net" target="_blank"><i class="fab fa-instagram"></i></a>
+
+                        <!-- <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="bi bi-facebook"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="bi bi-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button"><i class="bi bi-file-pdf-fill"></i></a> -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </footer>
+
+    <!--
+        Este es el complemento necesario para el funcionamiento de Bootstrap en nuestro proyecto,
+        un archivo Javascript con toda una serie de utilidades
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d26a5a3196.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

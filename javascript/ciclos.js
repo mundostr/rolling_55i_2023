@@ -25,7 +25,8 @@ for (let ciclo = 1; ciclo <= LIMITE; ciclo++) {
     console.log(contador);
 }
 
-// idem while, pero el do while nos asegura que el paquete de instrucciones del ciclo se ejecute al menos una vez
+// idem while, pero el do while nos asegura que el paquete de instrucciones del ciclo se ejecute al menos una vez.
+// es por esta razón que contador llega a 21 en este caso, aunque LIMITE2 se encuentre en 20.
 do {
     contador++;
     console.log(contador);

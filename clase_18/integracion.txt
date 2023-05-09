@@ -1,0 +1,4 @@
+PARA HOY:
+    - Ejercicios de integración de elementos esenciales Javascript.
+    - Introducción a matrices.
+    - 15 mins. meeting avance proyecto 1.

@@ -10,6 +10,8 @@ const campoResultado = document.getElementById('resultado');
 let indicador = 3;
 let txt_resultado = '';
 
+// switch() nos brinda un formato alternativo a un paquete de ifs()
+// logrando contemplar un paquete de posibles valores para la expresión evaluada
 switch (indicador) {
     case 1:
         txt_resultado = 'Conectando';

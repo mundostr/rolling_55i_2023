@@ -24,3 +24,8 @@ do {
 
 console.log('Productos en carrito:');
 console.log(productos_en_carrito);
+
+// Una de las alternativas para "iterar" (recorrer) una matriz
+for (let c = 0; c < productos_en_carrito.length; c++) {
+    console.log(productos_en_carrito[c]);
+}

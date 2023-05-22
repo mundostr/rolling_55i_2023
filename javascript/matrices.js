@@ -11,7 +11,20 @@ let variableUnitaria = 23
 // En Javascript una matriz puede mezclar tipos de valores (enteros, flotantes, cadenas, booleanos)
 // si bien en la práctica no mezclaremos generalmente, para ese tipo de casos utilizaremos los objetos
 let matriz01 = [1, "Pedro", true, false, "Juan", 22.5]
-let lecturas = [22, 23, 23, 24, 25, 26, 25, 23, 22, 21, 20]
+
+let lecturas_sensor = [
+    22.5,
+    23.1,
+    24.1,
+    22.3,
+    22.1,
+    20.5,
+    20.4
+]
+
+console.log(lecturas_sensor.length);
+
+/* lecturas[1]
 
 let promedio = 0
 
@@ -25,4 +38,4 @@ for (let c = 0; c < lecturas.length; c++) {
     console.log(lecturas[c])
 }
 promedio = promedio / lecturas.length
-console.log(promedio)
+console.log(promedio) */

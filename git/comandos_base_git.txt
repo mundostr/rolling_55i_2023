@@ -1,0 +1,44 @@
+COMANDOS BASE GIT:
+
+Chequeo de versión:
+	git --version
+
+Configuración general de usuario:
+	git config --global user.name "Carlos Perren"
+	git config --global user.email "idux.net@gmail.com"
+	git config --global core.editor "code --wait"
+
+Inicializar repositorio local (.git):
+	git init
+
+Clonar repositorio remoto:
+	git clone https://gitlab.com/rollingcodeschool.com/mi-proyecto.git
+
+Agregar archivos al control de versiones:
+	git add nombre_archivo
+	git add . (agrega todos los archivos modificados)
+
+Ver estado de los archivos controlados:
+	git status
+
+Confirmar cambios (commit):
+	git commit -m "texto ilustrativo sobre el cambio"
+	git commit -am "texto ilustrativo" (agrega y confirma a la vez)
+
+Historial de commits:
+	git log
+
+Restaurar archivo borrado antes de commit:
+	git restore nombre_archivo
+
+Restaurar archivo borrado luego de commit:
+	git reset --soft id_commit (mantiene los archivos que actualmente estánen preparación, staging).
+	git reset --hard id_commit (deshace todo)
+	git restore --staged nombre_archivo
+	git restore nombre_archivo
+
+Volver a estado previo antes de commit:
+	git checkout nombre_archivo
+
+Listar archivos en repo:
+	ls -al

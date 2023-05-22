@@ -13,11 +13,16 @@ let productos_en_carrito = [];
 let cargar_producto;
 let id_producto_a_cargar;
 
+// Utilizamos un do while para garantizar que el contenido del ciclo
+// se ejecute al menos una vez
 do {
+    // El confirm nos retorna true / false
     cargar_producto = confirm('Desea cargar un producto al carrito?:');
     
     if (cargar_producto === true) {
+        // prompt nos permite ingresar un valor
         id_producto_a_cargar = prompt('Ingresar código:');
+        // push agrega el elemento al final de la matriz
         productos_en_carrito.push(id_producto_a_cargar);
     }
 } while (cargar_producto === true)

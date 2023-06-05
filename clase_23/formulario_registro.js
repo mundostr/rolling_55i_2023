@@ -12,7 +12,7 @@ const mensaje = document.getElementById('mensaje');
 const formacion = document.getElementById('formacion');
 const postgrado = document.getElementById('postgrado');
 
-const array_mensajes = [];
+const usuarios = [];
 // Declaramos un array que nos va a servir luego para completar un menu desplegable en el HTML
 const opcionesFormacion = [ 'Primario', 'Secundario', 'Terciario', 'Universitario' ];
 
@@ -48,7 +48,7 @@ formulario.addEventListener('submit', function (event) {
         // mensaje2.style.display = 'block';
 
         // Simplemente como repaso, creamos un nuevo objeto con los distintos datos que vienen desde los campos del formulario
-        const nuevo_mensaje = {
+        const nuevo_usuario = {
             formacion: formacion.value,
             nombre: nombre.value,
             apellido: apellido.value,
@@ -57,11 +57,11 @@ formulario.addEventListener('submit', function (event) {
             postgrado: postgrado.checked ? 'activo': 'inactivo'
         }
 
-        console.log(nuevo_mensaje);
+        console.log(nuevo_usuario);
 
         // Podemos luego agregarlo a un array
         // Aquí veremos más adelante como verificarlo y guardarlo por ejemplo en archivo o en base de datos
-        // array_mensajes.push(nuevo_mensaje);
+        // usuarios.push(nuevo_mensaje);
     } else {
         console.log('Formulario ERROR');
         formacion.focus();

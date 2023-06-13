@@ -8,6 +8,7 @@ Práctica de carga de productos mediante formulario
 // Constantes, variables, arrays
 // Inicio con un array de productos vacío
 const productos = [];
+console.log(productos);
 
 // Estos objetos me permiten operar sobre el DOM, ya sea para recibir como para enviar datos
 const formulario = document.querySelector('form');
@@ -29,7 +30,7 @@ formulario.addEventListener('submit', function (event) {
     // preventDefault evita que el sistema intente recargar la página y procesar de su lado
     // manejamos el proceso del formulario nosotros
     event.preventDefault();
-    
+
     if (formulario.checkValidity()) { // El formulario está listo para procesar
         // Simplemente armamos un objeto temporal con los datos del nuevo producto, tomándolos
         // desde los campos de formulario a través de value, y hacemos un push para actualizar

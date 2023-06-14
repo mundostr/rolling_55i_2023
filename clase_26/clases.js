@@ -11,7 +11,7 @@ como necesitemos
 class Deportista {
     // El contenido del constructor se ejecuta de manera automática cada vez que se crea un
     // nuevo objeto (nueva instancia) del tipo de la clase.
-    constructor(nombre, peso, estatura, edad) {
+    constructor(nombre, peso, estatura, edad, dni) {
         if (typeof(nombre) === 'undefined' || typeof(peso) === 'undefined' || typeof(estatura) === 'undefined' || typeof(edad) === 'undefined') {
             throw new Error('Faltan parámetros obligatorios');
         }
@@ -20,6 +20,7 @@ class Deportista {
         // los parámetros nombre, peso, estatura y edad a las variables internas de la instancia
         this.codigo = this.generar_id_automatico();
         this.nombre = nombre;
+        this.dni = dni;
         this.peso = peso;
         this.estatura = estatura;
         this.edad = edad;
@@ -40,6 +41,14 @@ class Deportista {
     }
 }
 
+class Tenista extends Deportista {
+}
+
+class Futbolista extends Deportista {
+}
+
+class Basquetbolista extends Deportista {
+}
 
 // Creamos una nueva instancia de tipo Deportista, es decir, en otras palabras un nuevo deportista,
 // utilizando como molde la clase que acabamos de definir.

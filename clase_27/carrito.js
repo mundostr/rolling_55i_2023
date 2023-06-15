@@ -12,6 +12,8 @@ const btn_agregar = document.getElementById('btn_agregar');
 const listado_carrito = document.getElementById('listado_carrito');
 const total_carrito = document.getElementById('total_carrito');
 const cantidad = document.getElementById('cantidad');
+const mensaje = document.getElementById('mensaje');
+const mensajeBs = bootstrap.Toast.getOrCreateInstance(mensaje);
 
 // Por ahora los productos disponibles para compra, los tenemos cargados manualmente en un array,
 // esto más adelante llegará de una consulta a una base de datos por ejemplo.
@@ -85,6 +87,20 @@ btn_agregar.addEventListener('click', function (event) {
     // Por último se agrega ese producto al carrito y se actualiza el listado en el DOM
     carrito.push({ cantidad: parseInt(cantidad.value), producto: producto_carrito });
     actualizar_vista_carrito();
+    mensajeBs.show();
+    
+    /* setTimeout(() => {
+        mensajeBs.show();
+    }, 2000); */
+
+    /* let contador = 0;
+    const conteo = setInterval(() => {
+        contador++;
+        console.log(contador);
+        if (contador == 10) {
+            clearInterval(conteo);
+        }
+    }, 1000); */
 });
 
 cantidad.addEventListener('input', function() {

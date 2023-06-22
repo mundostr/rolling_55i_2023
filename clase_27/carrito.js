@@ -25,7 +25,12 @@ const productos_disponibles = [
 ];
 
 // Carrito de compra, que comienza vacío
-const carrito = [];
+let carrito;
+if (localStorage.getItem('carrito')) {
+    carrito = JSON.parse(localStorage.getItem('carrito'));
+} else {
+    carrito = [];
+}
 
 
 // Funciones
@@ -86,6 +91,7 @@ btn_agregar.addEventListener('click', function (event) {
     const producto_carrito = new Producto(elegido.codigo, elegido.nombre, elegido.precio);
     // Por último se agrega ese producto al carrito y se actualiza el listado en el DOM
     carrito.push({ cantidad: parseInt(cantidad.value), producto: producto_carrito });
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     actualizar_vista_carrito();
     mensajeBs.show();
     

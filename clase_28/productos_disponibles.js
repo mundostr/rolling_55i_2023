@@ -1,11 +1,3 @@
-// Por ahora los productos disponibles para compra, los tenemos cargados manualmente en un array,
-// esto más adelante llegará de una consulta a una base de datos por ejemplo.
-
-
-// Esta es una API de prueba generada para la comisión rolling_55i
-const URL_API = 'http://pad19.com:3050/';
-
-
 // Como es el único elemento declarado en el archivo, podemos exportarlo directamente
 /* export const productos_disponibles = [
     { codigo: 'ABC120', nombre: 'Aire acondicionado', precio: 230000, stock: 20 },
@@ -14,8 +6,13 @@ const URL_API = 'http://pad19.com:3050/';
     { codigo: 'ABC123', nombre: 'Multijuguera', precio: 23000, stock: 2 },
 ]; */
 
+
 // Conociendo ahora el manejo de promesas, podemos aprovechar async/await para recuperar el listado de productos
 // mediante una llamada a una API externa.
+
+// Esta es una API de prueba generada para la comisión rolling_55i
+const URL_API = 'http://pad19.com:3050/';
+
 const recuperar_productos = async () => {
     const productos = await fetch(URL_API);
     const productosJson = await productos.json();

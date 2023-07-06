@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  <body>
+    <!--
+      Todo inicia con un index.html base, podemos ver que solo existe una capa con id root, React
+      inicia su trabajo desde main.jsx yy utiliza esta capa como contenedor de la aplicación,
+      renderizando dentro todo lo necesario.
+
+      Recordar que JSX es una extensión sintáctica a Javascript, que nos permite incorporar markup
+      (etiquetas html) en JS, es una alternativa muy utilizada en React.
+      https://react.dev/learn/writing-markup-with-jsx#jsx-putting-markup-into-javascript
+    -->
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

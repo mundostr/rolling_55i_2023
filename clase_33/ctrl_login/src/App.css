@@ -1,0 +1,17 @@
+/*
+Si bien no es imprescindible, habitualmente el componente va acompañado de un archivo de estilos
+*/
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  background-color: #f60;
+  border-radius: 0.5em;
+  padding: 0.5em;
+}

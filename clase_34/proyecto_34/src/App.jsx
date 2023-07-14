@@ -21,34 +21,22 @@ function App() {
     { id: 5, titulo: 'La quinta noticia', anticipo: 'El anticipo de la quinta noticia', likes: 3, foto: 'https://wildcard.codestuff.io/dog/250/250?rnd=5' }
   ]
 
-  // Estas dos funciones son invocadas por botones en el DOM
-  // La primera aumenta la variable visitantes, la segunda la decrementa.
-  // Observar que utilizamos la función setVisitantes para alterar la variable, no lo hacemos de forma directa.
+  // Observar que utilizamos el llamado a setVisitantes para alterar la variable, no lo hacemos de forma directa.
   // De esta manera React llevará un control de los cambios y actualizará el DOM según corresponda.
-  const ingresar = () => {
-    setVisitantes(visitantes + 1);
-    // visitantes++;
-    // console.log(visitantes);
-  }
-
-  const salir = () => {
-    if (visitantes > 0) setVisitantes(visitantes - 1);
-    // if (visitantes > 0) visitantes--;
-    // console.log(visitantes);
-  }
+  // Pasar siempre un callback a la función de seteo, y dentro actualizar la variable
+  const agregarVisitante = () => setVisitantes(current => current + 1)
+  const quitarVisitante = () => setVisitantes(current => current > 0 ? current - 1 : current)
 
   return (
     <>
       <h1>Portada de noticias</h1>
-
       <h2>Visitantes online: {visitantes}</h2>
 
       {/*
-      Importante!: no debemos invocar funciones en los eventos inline en React,
-      solo pasar el nombre como referencia, por eso no utilizamos ()
+      Para mejor práctica, invocaremos siempre la función pasándola mediante callback
     */}
-      <button onClick={ingresar}>Ingresar</button>
-      <button onClick={salir}>Salir</button>
+      <button onClick={() => agregarVisitante()}>Ingresar</button>
+      <button onClick={() => quitarVisitante()}>Salir</button>
 
       {
         /*

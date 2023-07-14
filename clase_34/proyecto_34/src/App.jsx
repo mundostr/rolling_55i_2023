@@ -23,8 +23,15 @@ function App() {
 
   // Observar que utilizamos el llamado a setVisitantes para alterar la variable, no lo hacemos de forma directa.
   // De esta manera React llevará un control de los cambios y actualizará el DOM según corresponda.
-  // Pasar siempre un callback a la función de seteo, y dentro actualizar la variable
-  const agregarVisitante = () => setVisitantes(current => current + 1)
+  
+  // Podemos declarar de manera tradicional con function (como agregarVisitante()) o
+  // con arrow (como quitarVisitante()), pero lo mejor será siempre pasar un callback
+  // a la función de seteo (setVisitantes()), y dentro actualizar la variable.
+  function agregarVisitante() {
+    setVisitantes(function (actual) {
+      return actual + 1
+    })
+  }
   const quitarVisitante = () => setVisitantes(current => current > 0 ? current - 1 : current)
 
   return (

@@ -12,6 +12,7 @@ import './Noticia.css'
 function Noticia({ contenido }) {
   return (
     <>
+      // Recordar que siempre está disponible la alternativa de utilizar estilos inline
       <div style={{ border: '1px solid #333', borderRadius: '0.5em', padding: '0.5em', marginBottom: '0.5em' }}>
         <h3>{contenido.anticipo}</h3>
         <img src={contenido.foto} alt="Foto" style={{ width: '200px' }} />

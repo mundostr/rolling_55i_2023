@@ -1,9 +1,16 @@
+// Importamos el hook useState() para manejar dinámicamente el campo cantidad
+// y el hook useEffect() para poder recuperar automáticamente los productos con fetch al cargar el componente
 import { useState, useEffect } from 'react';
+
+// Importamos el componente hijo a utilizar
 import Producto from './Producto.jsx';
+
+// Desde react-bootstrap, importamos solo los componentes que necesitamos
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Badge from 'react-bootstrap/Badge';
 
+// Ver detalles de react-icons en https://react-icons.github.io/react-icons/
 import { BsFillCartPlusFill } from "react-icons/bs";
 
 function App() {

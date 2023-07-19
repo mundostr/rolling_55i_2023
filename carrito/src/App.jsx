@@ -11,7 +11,7 @@ import Container from 'react-bootstrap/Container';
 import Badge from 'react-bootstrap/Badge';
 
 // Ver detalles de react-icons en https://react-icons.github.io/react-icons/
-import { BsFillCartPlusFill } from "react-icons/bs";
+import { BsFillCartCheckFill } from "react-icons/bs";
 
 function App() {
   const URL_API = 'http://pad19.com:3050/productos';
@@ -55,7 +55,7 @@ function App() {
     <>
       <div style={{ position: 'fixed', top: '1em', right: '1em', zIndex: 1000 }}>
         <Button variant="success" onClick={handleCheckOut} style={{ float: 'right', fontSize: '150%' }}>
-          <BsFillCartPlusFill style={{ fontSize: '150%', marginBottom: '0.25em' }} /><br/>
+          <BsFillCartCheckFill style={{ fontSize: '150%', marginBottom: '0.25em' }} /><br/>
           <Badge bg="danger" style={{ marginRight: '0.5em' }}>{carrito.totalItems}</Badge>
           ${carrito.totalImporte}
         </Button>
@@ -63,6 +63,7 @@ function App() {
 
       <Container className="p-3">
         <Container className="p-3 mb-3 text-white bg-dark rounded-3">
+          <img src="/rc_blanco_isotipo.png" style={{width: '120px'}} />
           <h1>Rolling Compras</h1>
         </Container>
 

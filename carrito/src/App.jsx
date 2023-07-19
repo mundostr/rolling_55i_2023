@@ -14,7 +14,7 @@ import Badge from 'react-bootstrap/Badge';
 import { BsFillCartPlusFill } from "react-icons/bs";
 
 function App() {
-  const URL_API = 'http://pad19.com:3050/';
+  const URL_API = 'http://pad19.com:3050/productos';
 
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState({ productos: [], totalItems: 0, totalImporte: 0 });

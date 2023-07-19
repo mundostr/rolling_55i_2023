@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend testeo</title>
+</head>
+
+<style>
+  input:invalid {
+    border: 1px solid red;
+  }
+
+  input:valid {
+    border: 1px solid green;
+  }
+</style>
+
+<body>
+  <h1>API envío correo</h1>
+
+  <form method="post" novalidate>
+    <input type="email" id="destino" placeholder="Destino" style="width: 300px" required /><br />
+    <input type="text" id="nombre" placeholder="Nombre" style="width: 300px" required /><br />
+    <input type="text" id="asunto" placeholder="Asunto" style="width: 300px" required /><br />
+    <input type="text" id="mensaje" placeholder="mensaje" style="width: 300px" required /><br />
+    <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+    const API_URL = "http://pad19.com:3050/mail";
+    const formulario = document.querySelector('form');
+
+    formulario.addEventListener('submit', event => {
+      event.preventDefault();
+      if (formulario.checkValidity()) enviarMail()
+    })
+
+    const enviarMail = async (event) => {
+      try {
+        const destino = document.getElementById('destino');
+        const nombre = document.getElementById('nombre');
+        const asunto = document.getElementById('asunto');
+        const mensaje = document.getElementById('mensaje');
+
+        const mail = {
+          para: destino.value,
+          asunto: asunto.value,
+          cuerpo: `
+                    <h3>Datos del formulario</h3>
+                    <ul>
+                      <li>Nombre: ${nombre.value}</li>
+                      <li>Consulta: ${mensaje.value}</li>
+                    </ul>
+                  `,
+        };
+
+        const opciones = {
+          method: "POST",
+          headers: { "Content-Type": "application/json; charset=UTF-8" },
+          body: JSON.stringify(mail),
+        };
+
+        const envio = await fetch(API_URL, opciones);
+        const envioJson = await envio.json();
+        console.log(envioJson);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
+  </script>
+</body>
+
+</html>

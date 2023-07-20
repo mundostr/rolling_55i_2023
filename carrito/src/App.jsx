@@ -6,9 +6,7 @@ import { useState, useEffect } from 'react';
 import Producto from './Producto.jsx';
 
 // Desde react-bootstrap, importamos solo los componentes que necesitamos
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Badge from 'react-bootstrap/Badge';
+import { Button, Container, Badge } from 'react-bootstrap';
 
 // Ver detalles de react-icons en https://react-icons.github.io/react-icons/
 import { BsFillCartCheckFill } from "react-icons/bs";
@@ -54,7 +52,7 @@ function App() {
   return (
     <>
       <div style={{ position: 'fixed', top: '1em', right: '1em', zIndex: 1000 }}>
-        <Button variant="success" onClick={handleCheckOut} style={{ float: 'right', fontSize: '150%' }}>
+        <Button variant="warning" onClick={handleCheckOut} style={{ float: 'right', fontSize: '150%' }}>
           <BsFillCartCheckFill style={{ fontSize: '150%', marginBottom: '0.25em' }} /><br/>
           <Badge bg="danger" style={{ marginRight: '0.5em' }}>{carrito.totalItems}</Badge>
           ${carrito.totalImporte}

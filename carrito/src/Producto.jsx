@@ -2,9 +2,7 @@
 import { useState } from 'react';
 
 // Desde react-bootstrap, importamos solo los componentes que necesitamos
-import Card from 'react-bootstrap/Card';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Card, Form, Button } from 'react-bootstrap';
 
 // Ver detalles de react-icons en https://react-icons.github.io/react-icons/
 import { BsFillCartPlusFill } from "react-icons/bs";

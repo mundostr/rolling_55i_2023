@@ -10,11 +10,13 @@ function App() {
 
   const [productos, setProductos] = useState([]);
   const [carrito, setCarrito] = useState({ productos: [], totalItems: 0, totalImporte: 0 });
+  const [email, setEmail] = useState('');
+  const [emailValido, setEmailValido] = useState(false);
 
   const handleCarrito = (producto, cantidad) => {
     const nuevoProducto = { producto: producto, cantidad: cantidad };
     setCarrito({
-      productos: [...carrito.productos, nuevoProducto],
+      productos: [ ...carrito.productos, nuevoProducto ],
       totalItems: carrito.totalItems + cantidad,
       totalImporte: carrito.totalImporte + producto.precio * cantidad
     });
@@ -28,12 +30,21 @@ function App() {
     }
   }
 
+  const handleEmail = (event) => {
+    const email = event.target.value;
+    const emailRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/
+    setEmail(email);
+    setEmailValido(emailRegex.test(email));
+  }
+
   useEffect(() => {
-    (async () => {
+    const recuperarProductos = async () => {
       const resultado = await fetch(URL_API)
       const resultadoJson = await resultado.json();
       setProductos(resultadoJson);
-    })();
+    }
+
+    recuperarProductos();
 
     return () => { }
   }, [])
@@ -54,10 +65,14 @@ function App() {
           <h1>Rolling Compras</h1>
         </Container>
 
+        <p>
+          <Form.Control style={{border: emailValido ? '2px solid green': '2px solid red'}} type="text" value={email} onChange={() => { handleEmail(event) }} />
+        </p>
+
         <h3>ELECTRODOMESTICOS</h3>
 
         {
-          productos.map(producto => <Producto key={producto._id} datos={producto} handleCarrito={handleCarrito} />)
+          productos.map(producto => <Producto key={producto._id} datos={producto} handleCarrito={handleCarrito} /> )
         }
       </Container>
     </>

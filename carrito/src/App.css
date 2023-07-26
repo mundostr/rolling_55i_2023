@@ -1,0 +1,13 @@
+h3 {
+    background-color: #fc0;
+    padding: 0.25em;
+    border-radius: 0.25em;
+}
+
+.valido {
+    border: 2px solid green;
+}
+
+.invalido {
+    border: 2px solid red;
+}

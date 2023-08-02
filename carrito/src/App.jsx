@@ -1,65 +1,32 @@
-import { useState, useEffect } from 'react';
-import { Button, Container, Badge, Form } from 'react-bootstrap';
-import { BsFillCartCheckFill } from "react-icons/bs"; // https://react-icons.github.io/react-icons/
-import Producto from './Producto.jsx';
+// De react-router-dom importamos 3 elementos
+// BrowserRouter (con el alias de Router): objeto principal para el manejo de rutas
+// Routes: objeto para la lista de rutas
+// Route: objeto para la ruta individual
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Menu from './Menu.jsx';
+import Home from './Home.jsx';
+import Pagina2 from './Pagina2.jsx';
 
 import './App.css'
 
+// Esta es una estructura básica de react-router-dom
+// Podemos ver que el componente Menu se encuentra dentro del Router general,
+// con ello tendremos opción de utilizar elementos de rutas como Navlink,
+// y dentro de Routes creamos los Route necesarios para renderizar las distintas páginas
+// Por supuesto podemos retornar otros elementos por fuera del bloque Router, que serán renderizados
+// siempre, sin importar cuál sea el Route actual
 function App() {
-  const URL_API = 'http://pad19.com:3050/productos';
-
-  const [productos, setProductos] = useState([]);
-  const [carrito, setCarrito] = useState({ productos: [], totalItems: 0, totalImporte: 0 });
-
-  const handleCarrito = (producto, cantidad) => {
-    const nuevoProducto = { producto: producto, cantidad: cantidad };
-    setCarrito({
-      productos: [...carrito.productos, nuevoProducto],
-      totalItems: carrito.totalItems + cantidad,
-      totalImporte: carrito.totalImporte + producto.precio * cantidad
-    });
-  }
-
-  const handleCheckOut = () => {
-    if (carrito.productos.length === 0) {
-      alert('Nada en el carrito!');
-    } else {
-      console.log(carrito);
-    }
-  }
-
-  useEffect(() => {
-    (async () => {
-      const resultado = await fetch(URL_API)
-      const resultadoJson = await resultado.json();
-      setProductos(resultadoJson);
-    })();
-
-    return () => { }
-  }, [])
-
   return (
     <>
-      <div style={{ position: 'fixed', top: '1em', right: '1em', zIndex: 1000 }}>
-        <Button variant="success" onClick={handleCheckOut} style={{ float: 'right', fontSize: '150%' }}>
-          <BsFillCartCheckFill style={{ fontSize: '150%', marginBottom: '0.25em' }} /><br />
-          <Badge bg="danger" style={{ marginRight: '0.5em' }}>{carrito.totalItems}</Badge>
-          ${carrito.totalImporte}
-        </Button>
-      </div>
-
-      <Container className="p-3">
-        <Container className="p-3 mb-3 text-white bg-dark rounded-3">
-          <img src="/rc_blanco_isotipo.png" style={{ width: '120px' }} />
-          <h1>Rolling Compras</h1>
-        </Container>
-
-        <h3>ELECTRODOMESTICOS</h3>
-
-        {
-          productos.map(producto => <Producto key={producto._id} datos={producto} handleCarrito={handleCarrito} />)
-        }
-      </Container>
+      <Router>
+        <Menu />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pagina2" element={<Pagina2 />} />
+        </Routes>
+      </Router>
     </>
   )
 }

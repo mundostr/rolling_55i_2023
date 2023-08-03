@@ -1,0 +1,43 @@
+body {
+    background-color: rgb(65, 58, 155);
+}
+
+.container-home {
+    background-color: rgb(65, 58, 155);
+    color: white;
+    min-height: 100vh;
+}
+
+.container-blocks {
+    border-radius: 0.5em;
+}
+
+.col-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+}
+
+.img-home {
+    width: 500px;
+}
+
+.card img {
+    width: 100%;
+    height: 350px;
+}
+
+#menu a.active {
+    background-color: #fc0;
+    color: #333;
+    border-radius: 0.3em;
+}
+
+#menu a.active:hover {
+    background-color: #fb0;
+}
+
+#error404 {
+    width: 100%;
+}
